@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2011 9:22:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="databeans.Bills" table="bills" catalog="ecommerce_db">
+        <id name="billId" type="java.lang.Integer">
+            <column name="bill_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="users" class="databeans.Users" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <property name="date" type="timestamp">
+            <column name="date" length="19" not-null="true" />
+        </property>
+        <property name="totalPrice" type="double">
+            <column name="total_price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="final_" type="boolean">
+            <column name="final" not-null="true" />
+        </property>
+        <set name="transactionses" inverse="true">
+            <key>
+                <column name="bid" not-null="true">
+                    <comment>bill id</comment>
+                </column>
+            </key>
+            <one-to-many class="databeans.Transactions" />
+        </set>
+    </class>
+</hibernate-mapping>

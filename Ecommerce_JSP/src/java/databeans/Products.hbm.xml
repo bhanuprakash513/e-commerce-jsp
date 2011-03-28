@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 28, 2011 9:22:35 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="databeans.Products" table="products" catalog="ecommerce_db">
+        <id name="productId" type="java.lang.Integer">
+            <column name="product_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categories" class="databeans.Categories" fetch="select">
+            <column name="cat_id" not-null="true">
+                <comment>category id of item</comment>
+            </column>
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true">
+                <comment>name of item</comment>
+            </column>
+        </property>
+        <property name="price" type="int">
+            <column name="price" not-null="true">
+                <comment>price of item</comment>
+            </column>
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="quantity">
+                <comment>quantity of item in stock, set by admin</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="65535">
+                <comment>short description of the item</comment>
+            </column>
+        </property>
+        <property name="pictureLink" type="string">
+            <column name="picture_link" length="65535" not-null="true">
+                <comment>path</comment>
+            </column>
+        </property>
+        <set name="transactionses" inverse="true">
+            <key>
+                <column name="pid" not-null="true">
+                    <comment>product id (item id)</comment>
+                </column>
+            </key>
+            <one-to-many class="databeans.Transactions" />
+        </set>
+    </class>
+</hibernate-mapping>
