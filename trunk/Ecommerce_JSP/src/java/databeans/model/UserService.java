@@ -78,12 +78,22 @@ public class UserService implements UserService_Interface{
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         sdf.format(cal.getTime());
+
         //creating cart of the user
-        Bills cart = new Bills(result.get(0), new Date(sdf.format(cal.getTime())), 0, false);
-        session.beginTransaction();
-        session.persist(cart);
-        session.getTransaction().commit();
-        
+        boolean flag = true;
+        Users user = result.get(0);
+        for(Bills bill : (Set<Bills>)user.getBillses()){
+            if(!bill.isFinal_()){
+                flag = false;
+            }
+        }
+        if(flag){
+            //means that client has no unpaid carts, so we create a new one for him
+            Bills cart = new Bills(result.get(0), new Date(sdf.format(cal.getTime())), 0, false);
+            session.beginTransaction();
+            session.persist(cart);
+            session.getTransaction().commit();
+        }
         System.out.println("login successeded");
         return true;
     }
@@ -169,7 +179,7 @@ public class UserService implements UserService_Interface{
         return false;
     }
 
-    public Users showMyProfile(int userID) {
+    public Users getUser(int userID) {
         //throw new UnsupportedOperationException("Not supported yet.");
         Criteria profileCriteria = session.createCriteria(Users.class);
         Criterion idCriterion = Restrictions.eq("uid", userID);
@@ -229,21 +239,13 @@ public class UserService implements UserService_Interface{
         q.setInteger("cid", cartID);
         Bills bill = (Bills)q.list().get(0);
         for(Transactions t : (Set<Transactions>)bill.getTransactionses()){
-//            //restoring products quantities
-//            Products item = t.getProducts();
-//            item.setQuantity(item.getQuantity() - t.getQuantity());
-//            //saving products to DB
-//            session.beginTransaction();
-//            session.persist(item);
-//            session.getTransaction().commit();
-//            System.out.println("products restored");
             //deleting transactions
             removeFromCart(t.getTid().intValue());
         }
-        String deleteString = "DELETE FROM Bills b WHERE b.billId=:c_id";
-        q = session.createQuery(deleteString);
-        q.setInteger("c_id", cartID);
-        q.executeUpdate();
+//        String deleteString = "DELETE FROM Bills b WHERE b.billId=:c_id";
+//        q = session.createQuery(deleteString);
+//        q.setInteger("c_id", cartID);
+//        q.executeUpdate();
     }
 
     public ArrayList<Categories> getAllCategories() {
