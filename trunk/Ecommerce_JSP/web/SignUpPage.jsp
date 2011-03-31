@@ -412,7 +412,7 @@ Released   : 20102110
 		<table>
 		<tr><td><b>Name</b></td><td><input type="text" size="20" id="txt1" onblur="name1()" name="name"><span id="sp1"></span></td></tr>
 		<tr><td><b>Email</b></td><td><input type="text" size="20" id="txt2" onblur="email1()" name="email"><span id="sp2"></span></td></tr>
-		<tr><td><b>Birthday</b></td><td><input type="text" size="20" id="txt3" onblur="isDate()" name="birthday"><span id="sp3">mm/dd/yyyy</span></td></tr>
+		<tr><td><b>Birthday</b></td><td><input type="text" size="20" id="txt3" onblur="isDate()" name="birthDay"><span id="sp3">mm/dd/yyyy</span></td></tr>
 		<tr><td><b>Adress</b></td><td><input type="text" size="20" id="txt4" name="adress" onblur="adress1()"><span id="sp4"></span></td></tr>
 		<tr><td><b></>Credit Limit</b></td><td><input type="text" size="20" id="txt5" onblur="credit1()" name="credit"><span id="sp5"></span></td></tr>
                 <tr><td><b>Job</b></td><td><input type="text" size="20" id="txt6" name="job" onblur="job1()"><span id="sp6"></span></td></tr>
