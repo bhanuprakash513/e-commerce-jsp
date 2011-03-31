@@ -28,10 +28,10 @@
 				<div class="entry">
 				<br>
 				<br>
-				<a href="#"><font size="5"><b>Add Product</b></font></a>
+				<a href="AddProductPage.jsp"><font size="5"><b>Add Product</b></font></a>
 				<br>
 				<br>
-				<a href="#"><font size="5"><b>Add Category</b></font></a>
+				<a href="CategoryAdding.jsp"><font size="5"><b>Add Category</b></font></a>
 				<br>
 				<br>
 				<a href="#"><font size="5"><b>View All Users</b></font></a>
