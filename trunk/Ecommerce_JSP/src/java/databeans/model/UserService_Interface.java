@@ -49,11 +49,11 @@ public interface UserService_Interface {
     Set<Transactions> viewMyCart(int userID);
     /**
      *sets user cart to bill, by making column final = true
-     * @param cart user cart
+     * @param cartID user cart id stored at session
      * @return true if user credit and supply of items in stuf are sufficient
      *      false otherwise
      */
-    boolean submitMyCart(Bills cart);
+    boolean submitMyCart(int cartID);
     /**
      *show user profile
      * @param userID the user id

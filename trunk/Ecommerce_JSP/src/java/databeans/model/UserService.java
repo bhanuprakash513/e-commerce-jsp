@@ -35,6 +35,7 @@ public class UserService implements UserService_Interface{
      * used to commit transactions
      */
     private Session session;
+    private static UserService service = new UserService();
     /**
      * private constructor to use singleton design pattern
      * builds the session object
@@ -43,7 +44,13 @@ public class UserService implements UserService_Interface{
         SessionFactory factory = new Configuration().configure().buildSessionFactory();
         session = factory.openSession();
     }
-
+    /**
+     * returns the only instance of UserService
+     * @return
+     */
+    public static UserService createServiceInstance(){
+        return service;
+    }
 
     public boolean signIn(String userName, String pwd) {
         //throw new UnsupportedOperationException("Not supported yet.");
@@ -109,9 +116,14 @@ public class UserService implements UserService_Interface{
         return null;
     }
 
-    public boolean submitMyCart(Bills cart) {
+    public boolean submitMyCart(int cartID) {
         //throw new UnsupportedOperationException("Not supported yet.");
         //reducing user credit
+        String queryString = "FROM Bills b WHERE b.billId=:cid";
+        Query q = session.createQuery(queryString);
+        q.setInteger("cid", cartID);
+        Bills cart = (Bills)q.list().get(0);
+
         Users user = cart.getUsers();
 
         if(user.getCredit() >= cart.getTotalPrice()){
