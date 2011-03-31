@@ -58,7 +58,7 @@ public interface UserService_Interface {
      *show user profile
      * @param userID the user id
      */
-    Users showMyProfile(int userID);
+    Users getUser(int userID);
     /**
      *adds a new transaction to user cart
      * @param t user added transaction
