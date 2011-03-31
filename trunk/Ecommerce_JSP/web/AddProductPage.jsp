@@ -183,12 +183,12 @@ function Validate() {
                             <table>
                                 <tr><td><b>Product Name</b></td><td><input type="text" size="20" id="txt1" onblur="productName1()" name="productName"><span id="sp1"></span></td></tr>
                                 <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price()" name="email"><span id="sp2"></span></td></tr>
-                                <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantity()" name="birthday"><span id="sp3"></span></td></tr>
-                                <tr><td><b>Product Picture</b></td><td><input type="file" size="20" id="txt4" name="adress"><span id="sp4"></span></td></tr>
+                                <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantity()" name="quantity"><span id="sp3"></span></td></tr>
+                                <tr><td><b>Product Picture</b></td><td><input type="file" size="20" id="txt4" name="picturePath"><span id="sp4"></span></td></tr>
                                 <tr><td align="left" colspan="2"></><b></>Nationality</b></td></tr>
                                 <tr><td colspan="2">
                                         <div>
-                                            <select id="sel1" name="nationality">
+                                            <select id="sel1" name="category">
                                                 <option value="choose the category">Choose The Category</option>
                                                 <option value="egypt">egypt</option>
                                                 <option value="france">france</option>
