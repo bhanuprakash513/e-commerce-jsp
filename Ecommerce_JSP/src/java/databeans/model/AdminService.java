@@ -31,8 +31,13 @@ public class AdminService implements AdminService_Interface{
 
     public void addCategory(Categories cat) {
 //        throw new UnsupportedOperationException("Not supported yet.");
+//        String queryString = "FROM Categories WHERE id=:catID";
+//        Query q = session.createQuery(queryString);
+//        q.setInteger("catID", cat.getId());
+//        Categories cat2 = (Categories)q.list().get(0);
+//        cat2.setName(cat.getName());
         session.beginTransaction();
-        session.persist(cat);
+        session.saveOrUpdate(cat);
         session.getTransaction().commit();
         System.out.println("category added");
     }
@@ -40,8 +45,9 @@ public class AdminService implements AdminService_Interface{
     public void addProduct(Products item) {
 //        throw new UnsupportedOperationException("Not supported yet.");
         session.beginTransaction();
-        session.persist(item);
+        session.saveOrUpdate(item);
         session.getTransaction().commit();
+        System.out.println("product added");
     }
 
     public ArrayList<Users> viewAllUsers() {
@@ -54,7 +60,7 @@ public class AdminService implements AdminService_Interface{
     public void modifyProduct(Products product) {
 //        throw new UnsupportedOperationException("Not supported yet.");
         session.beginTransaction();
-        session.persist(product);
+        session.update(product);
         session.getTransaction().commit();
         
     }
