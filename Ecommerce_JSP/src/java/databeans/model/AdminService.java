@@ -46,7 +46,7 @@ public class AdminService implements AdminService_Interface{
 
     public ArrayList<Users> viewAllUsers() {
 //        throw new UnsupportedOperationException("Not supported yet.");
-        String queryString = "FROM users";
+        String queryString = "FROM Users";
         Query q = session.createQuery(queryString);
         return (ArrayList<Users>)q.list();
     }
@@ -61,7 +61,7 @@ public class AdminService implements AdminService_Interface{
 
     public Users getUser(int userID) {
         //throw new UnsupportedOperationException("Not supported yet.");
-        String queryString = "FROM users u WHERE uid=:u_id";
+        String queryString = "FROM Users u WHERE uid=:u_id";
         Query q = session.createQuery(queryString);
         q.setInteger("u_id", userID);
         return (Users)q.list().get(0);
@@ -69,7 +69,7 @@ public class AdminService implements AdminService_Interface{
 
     public Categories getCategory(String catName) {
 //        throw new UnsupportedOperationException("Not supported yet.");
-        String queryString = "FROM categories WHERE name=:catname";
+        String queryString = "FROM Categories WHERE name=:catname";
         Query q = session.createQuery(queryString);
         q.setString("catname", catName);
         return (Categories)q.list().get(0);
