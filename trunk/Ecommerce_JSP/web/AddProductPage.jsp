@@ -207,10 +207,10 @@ function Validate() {
                     <h2 class="title">Admin Product</h2>
                     <div class="entry">
                         <br>
-                        <form name="lab3" action="index.jsp" onsubmit="productName1();price();quantities();describe();return check();">
+                        <form name="lab3" action="ProductAddingInDb.jsp" onsubmit="productName1();price();quantities();describe();return check();">
                             <table>
                                 <tr><td><b>Product Name</b></td><td><input type="text" size="20" id="txt1" onblur="productName1();" name="productName"><span id="sp1"></span></td></tr>
-                                <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price();" name="email"><span id="sp2"></span></td></tr>
+                                <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price();" name="priceValue"><span id="sp2"></span></td></tr>
                                 <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantities();" name="quantity"><span id="sp3"></span></td></tr>
                                 <tr><td><b>Product Picture</b></td><td><input type="file" size="20" id="txt4" name="picturePath"><span id="sp4"></span></td></tr>
                                 <tr><td><b>Picture Description</b></td><td><input type="Text" size="40" id="txt5" name="description"><span id="sp5"></span></td></tr>
