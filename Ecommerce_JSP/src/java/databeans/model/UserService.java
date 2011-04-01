@@ -12,7 +12,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 import databeans.Bills;
@@ -55,7 +54,7 @@ public class UserService implements UserService_Interface{
      * returns the only instance of UserService
      * @return
      */
-    public static UserService createServiceInstance(){
+    public static UserService getServiceInstance(){
         return service;
     }
 
