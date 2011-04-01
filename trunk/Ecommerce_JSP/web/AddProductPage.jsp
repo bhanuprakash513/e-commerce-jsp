@@ -26,6 +26,7 @@ Released   : 20102110
     var flagprice=false;
     var flagquantity=false;
      var flagfile=false;
+     var flagdescription=false;
     function productName1()
     {
         if (document.getElementById("txt1").value == "")
@@ -47,6 +48,31 @@ Released   : 20102110
 
             document.getElementById("sp1").innerHTML = "";
             flagpname=true;
+            return true;
+        }
+
+    }
+    function describe()
+    {
+        if (document.getElementById("txt5").value == "")
+        {
+
+            document.getElementById("sp5").innerHTML = "u must enter the product decribtion";
+            flagdescription=false;
+            return false;
+        }
+        else
+            if(document.getElementById("txt5").value.length<6 || document.getElementById("txt5").value.length>40)
+        {
+            document.getElementById("sp5").innerHTML = "the number of characters must be between 6 and 40 character";
+            flagdescription=false;
+            return false;
+        }
+        else
+        {
+
+            document.getElementById("sp1").innerHTML = "";
+            flagdescription=true;
             return true;
         }
 
@@ -151,7 +177,7 @@ function Validate() {
                             //alert("flagprice="+flagprice);
                             //alert("flagquantity="+flagquantity);
                             //alert("flagf="+flagfile);
-				if(flagpname && flagprice && flagquantity && flagfile)
+				if(flagpname && flagprice && flagquantity && flagfile && flagdescription)
 
 				return true;
 				else
@@ -181,12 +207,13 @@ function Validate() {
                     <h2 class="title">Admin Product</h2>
                     <div class="entry">
                         <br>
-                        <form name="lab3" action="index.jsp" onsubmit="productName1();price();quantities();return check();">
+                        <form name="lab3" action="index.jsp" onsubmit="productName1();price();quantities();describe();return check();">
                             <table>
                                 <tr><td><b>Product Name</b></td><td><input type="text" size="20" id="txt1" onblur="productName1();" name="productName"><span id="sp1"></span></td></tr>
                                 <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price();" name="email"><span id="sp2"></span></td></tr>
                                 <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantities();" name="quantity"><span id="sp3"></span></td></tr>
                                 <tr><td><b>Product Picture</b></td><td><input type="file" size="20" id="txt4" name="picturePath"><span id="sp4"></span></td></tr>
+                                <tr><td><b>Picture Description</b></td><td><input type="Text" size="40" id="txt5" name="description"><span id="sp5"></span></td></tr>
                                 <tr><td align="left" colspan="2"></><b></>Nationality</b></td></tr>
                                 <tr><td colspan="2">
                                         <div>
