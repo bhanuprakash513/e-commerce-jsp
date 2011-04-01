@@ -417,8 +417,8 @@ Released   : 20102110
 		<tr><td><b></>Credit Limit</b></td><td><input type="text" size="20" id="txt5" onblur="credit1()" name="credit"><span id="sp5"></span></td></tr>
                 <tr><td><b>Job</b></td><td><input type="text" size="20" id="txt6" name="job" onblur="job1()"><span id="sp6"></span></td></tr>
                 <tr><td><b>interests</b></td><td><input type="text" size="20" id="txt15" name="interests" onblur="interests1()"><span id="sp15"></span></td></tr>
-		<tr><td><b>Password</b></td><td><input type="text" size="20" id="txt7" onblur="validatePwd()" name="password"><span id="sp7"></span></td></tr>
-		<tr><td><b>Confirm Password</b></td><td><input type="text" size="20" id="txt8" onblur="confirm1()" name="confirm"><span id="sp8"></span></td></tr>
+		<tr><td><b>Password</b></td><td><input type="password" size="20" id="txt7" onblur="validatePwd()" name="password"><span id="sp7"></span></td></tr>
+		<tr><td><b>Confirm Password</b></td><td><input type="password" size="20" id="txt8" onblur="confirm1()" name="confirm"><span id="sp8"></span></td></tr>
 		<tr><td align="left" colspan="2"></><b></>Gender</b></td></tr>
 		<tr><td><input type="radio" name="sex" value="male">male </td>
 		<td><input type="radio" name="sex" value="female">female</td><tr>
