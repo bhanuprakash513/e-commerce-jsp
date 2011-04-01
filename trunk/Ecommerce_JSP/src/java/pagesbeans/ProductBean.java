@@ -11,11 +11,11 @@ package pagesbeans;
  */
 public class ProductBean {
 String productName;
-String email;
-String quantity;
+int priceValue;
+int quantity;
 String picturePath;
 String category;
-
+String description;
     public ProductBean() {
     }
 
@@ -23,9 +23,7 @@ String category;
         return category;
     }
 
-    public String getEmail() {
-        return email;
-    }
+ 
 
     public String getPicturePath() {
         return picturePath;
@@ -35,7 +33,7 @@ String category;
         return productName;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
@@ -43,20 +41,37 @@ String category;
         this.category = category;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    
+
 
     public void setPicturePath(String picturePath) {
         this.picturePath = picturePath;
     }
 
+    public void setPriceValue(int priceValue) {
+        this.priceValue = priceValue;
+    }
+
+    public int getPriceValue() {
+        return priceValue;
+    }
+
+   
+
     public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 
