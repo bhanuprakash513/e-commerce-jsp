@@ -40,5 +40,10 @@ public interface AdminService_Interface {
      * @param userID user ID
      */
     Users getUser(int userID);
+    /**
+     * gets a categories object based on its name in DB
+     * @param catName the category name
+     * @return
+     */
     Categories getCategory(String catName);
 }
