@@ -25,6 +25,7 @@ Released   : 20102110
     var flagpname=false;
     var flagprice=false;
     var flagquantity=false;
+     var flagfile=false;
     function productName1()
     {
         if (document.getElementById("txt1").value == "")
@@ -81,7 +82,7 @@ Released   : 20102110
 
 
     }
-    function quantity()
+    function quantities()
     {
         if (document.getElementById("txt3").value == "") {
             //flag=false;
@@ -93,8 +94,9 @@ Released   : 20102110
             if (isNaN(document.getElementById("txt3").value)) {
                 //flag=false;
                 //alert("eshta");
-                flagquantity=false;
+                
                 document.getElementById("sp3").innerHTML = "u shouldnt enter a character";
+                flagquantity=false;
                 return false;
             }
 
@@ -112,10 +114,10 @@ Released   : 20102110
 
 
     }
-  var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
+ 
 
 function Validate() {
- 
+             var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
             var sFileName = document.getElementById("txt4").value;
             if (sFileName.length > 0) {
                 var blnValid = false;
@@ -143,7 +145,7 @@ function Validate() {
             }
         }
         function check(){
-                            var flagfile;
+                            
                             flagfile=Validate();
                             //alert("flagpname="+flagpname);
                             //alert("flagprice="+flagprice);
@@ -179,11 +181,11 @@ function Validate() {
                     <h2 class="title">Admin Product</h2>
                     <div class="entry">
                         <br>
-                        <form name="lab3" action="index.jsp" onsubmit="productName1();price();quantity();return check();">
+                        <form name="lab3" action="index.jsp" onsubmit="productName1();price();quantities();return check();">
                             <table>
-                                <tr><td><b>Product Name</b></td><td><input type="text" size="20" id="txt1" onblur="productName1()" name="productName"><span id="sp1"></span></td></tr>
-                                <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price()" name="email"><span id="sp2"></span></td></tr>
-                                <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantity()" name="quantity"><span id="sp3"></span></td></tr>
+                                <tr><td><b>Product Name</b></td><td><input type="text" size="20" id="txt1" onblur="productName1();" name="productName"><span id="sp1"></span></td></tr>
+                                <tr><td><b>Price</b></td><td><input type="text" size="20" id="txt2" onblur="price();" name="email"><span id="sp2"></span></td></tr>
+                                <tr><td><b>Quantity</b></td><td><input type="text" size="20" id="txt3" onblur="quantities();" name="quantity"><span id="sp3"></span></td></tr>
                                 <tr><td><b>Product Picture</b></td><td><input type="file" size="20" id="txt4" name="picturePath"><span id="sp4"></span></td></tr>
                                 <tr><td align="left" colspan="2"></><b></>Nationality</b></td></tr>
                                 <tr><td colspan="2">
