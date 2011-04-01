@@ -79,7 +79,7 @@ Released   : 20102110
                                 <tr><td><b>Category Name</b></td><td><input type="text" size="20" id="txt1"  name="categoryName"><span id="sp1"></span></td></tr>
                                 <tr><td>&nbsp;&nbsp; </td><td></td> &nbsp;&nbsp;</tr>
                                 <tr><td> &nbsp;&nbsp;</td><td></td> &nbsp;&nbsp;</tr>
-                                <tr><td align="center"<input type="submit" value="submit"></td><td></td><td></td></tr>
+                                <tr><td align="center"<input type="submit" value="Add"></td><td></td><td></td></tr>
 
                             </table>
 
