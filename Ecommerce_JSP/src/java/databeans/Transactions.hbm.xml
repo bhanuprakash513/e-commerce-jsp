@@ -1,25 +1,24 @@
-<?xml version="1.0"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Mar 28, 2011 9:22:35 AM by Hibernate Tools 3.2.1.GA -->
 <hibernate-mapping>
-    <class name="databeans.Transactions" table="transactions" catalog="ecommerce_db">
-        <id name="tid" type="java.lang.Integer">
-            <column name="tid" />
-            <generator class="identity" />
-        </id>
-        <many-to-one name="bills" class="databeans.Bills" fetch="select">
-            <column name="bid" not-null="true">
-                <comment>bill id</comment>
-            </column>
-        </many-to-one>
-        <many-to-one name="products" class="databeans.Products" fetch="select">
-            <column name="pid" not-null="true">
-                <comment>product id (item id)</comment>
-            </column>
-        </many-to-one>
-        <property name="quantity" type="int">
-            <column name="quantity" not-null="true" />
-        </property>
-    </class>
+  <class catalog="ecommerce_db" name="databeans.Transactions" table="transactions">
+    <id name="tid" type="java.lang.Integer">
+      <column name="tid"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="databeans.Bills" fetch="select" name="bills">
+      <column name="bid" not-null="true">
+        <comment>bill id</comment>
+      </column>
+    </many-to-one>
+    <many-to-one class="databeans.Products" fetch="select" name="products">
+      <column name="pid" not-null="true">
+        <comment>product id (item id)</comment>
+      </column>
+    </many-to-one>
+    <property name="quantity" type="int">
+      <column name="quantity" not-null="true"/>
+    </property>
+  </class>
 </hibernate-mapping>

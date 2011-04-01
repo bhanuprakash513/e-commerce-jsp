@@ -40,4 +40,5 @@ public interface AdminService_Interface {
      * @param userID user ID
      */
     Users getUser(int userID);
+    Categories getCategory(String catName);
 }

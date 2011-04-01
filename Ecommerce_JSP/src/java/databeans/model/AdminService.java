@@ -66,4 +66,11 @@ public class AdminService implements AdminService_Interface{
         return (Users)q.list().get(0);
     }
 
+    public Categories getCategory(String catName) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+        String queryString = "FROM categories WHERE name=:catname";
+        Query q = session.createQuery(queryString);
+        return (Categories)q.list().get(0);
+    }
+
 }
