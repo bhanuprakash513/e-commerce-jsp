@@ -16,34 +16,28 @@ import java.util.ArrayList;
  */
 public interface AdminService_Interface {
     /**
-     *
-     * @param cat
+     *adds a new category entry to database table categories
+     * @param cat the category to be inserted
      */
     void addCategory(Categories cat);
     /**
-     *
-     * @param item
+     *adds a new product entry to database table products
+     * @param item the item to be inserted
      */
     void addProduct(Products item);
     /**
-     *
-     * @return
+     *returns all the users in database table users
+     * @return ArrayList of all users
      */
     ArrayList<Users> viewAllUsers();
     /**
-     *
-     * @param userName
-     * @return
+     *modifies a product in the database table products
+     * @param product: product data
      */
-    Users viewUser(int userID);
+    void modifyProduct(Products product);
     /**
-     *
-     * @param product
+     *gets a user based on his ID in database table users
+     * @param userID user ID
      */
-    void modifyProduct(int productID);
-    /**
-     *
-     * @param user
-     */
-    Users showClientHistory(int userID);
+    Users getUser(int userID);
 }
