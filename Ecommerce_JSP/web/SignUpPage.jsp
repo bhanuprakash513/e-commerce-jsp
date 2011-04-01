@@ -29,9 +29,9 @@ Released   : 20102110
 			var flagcredit=false;
 			var flagpassword=false;
 			var flagconfirm=false;
-			var flagsex=false;
-			var flagnationality=false;
-                        var flagadress=false;
+			
+			
+                        
                         var flaginterests=false;
                         var flagjob=false;
 			//var flaginterests=false;
@@ -61,33 +61,7 @@ Released   : 20102110
 					}
 
 			}
-                    function adress1()
-			{
-                            if (document.getElementById("txt4").value == "")
-					 {
-
-						document.getElementById("sp4").innerHTML = "u must enter your adress";
-						flagadress=false;
-						return false;
-					}
-
-
-					  else
-                                              if(document.getElementById("txt4").value.length<6 || document.getElementById("txt4").value.length>14)
-					  {
-					  	document.getElementById("sp4").innerHTML = "the number of characters must be between 6 and 14 character";
-						flagadress=false;
-						return false;
-					  }
-					else
-					{
-
-						document.getElementById("sp4").innerHTML = "";
-						flagadress=true;
-						return true;
-					}
-
-			}
+                    
                     function interests1()
 			{
                             if (document.getElementById("txt15").value == "")
@@ -263,25 +237,7 @@ Released   : 20102110
 				 }
 
 				}
-			function g_field()
-			{
-				//alert("hey");
-				if (document.getElementsByName("sex")[0].checked == false && document.getElementsByName("sex")[1].checked == false) {
-					//flag = false;
-					alert("sex here false");
-					flagsex=false;
-					document.getElementById("sp9").innerHTML = "   u should choose ur sex";
-					return false;
-				}
-				else {
-					alert("sex here true");
-					flag4 = true;
-					flagsex=true;
-					document.getElementById("sp9").innerHTML = "";
-					return true;
-				}
-
-			}
+			
 				function na_field(){
 					//alert("no way");
 					if (document.getElementById("chk1").checked == false && document.getElementById("chk2").checked == false && document.getElementById("chk3").checked == false && document.getElementById("chk4").checked == false) {
@@ -301,26 +257,7 @@ Released   : 20102110
 					}
 
 				}
-				function nat_field()
-				{
-					//alert("noo");
-					if (document.getElementById("sel1").selectedIndex== 0){
-					//{alert("nationality here is false");
-						//flag = false;
-						//alert("jdjgjjd");
-						document.getElementById("sp11").innerHTML = "u should choose ur nationality";
-						flagnationality=false;
-						return false;
-					}
-					else {
-						alert("nationality here is true");
-						//flag6 = true;
-						flagnationality=true;
-						document.getElementById("sp11").innerHTML = "";
-						return true;
-					}
-
-				}
+				
 				function validatePwd() {
 				var invalid = " "; // Invalid character is a space
 				var minLength = 6; // Minimum length
@@ -363,15 +300,15 @@ Released   : 20102110
 				}
 			}
 			function check(){
-				if(flagname && flagemail && flagbirthday && flagcredit && flagpassword && flagconfirm && flagsex && flagnationality && flagadress && flaginterests && flagjob)
+				if(flagname && flagemail && flagbirthday && flagcredit && flagpassword && flagconfirm  && flaginterests && flagjob)
 				return true;
 				else
 				return false;
 			}
 			function all(){
-				g_field();
+				
 				//na_field();
-				nat_field();
+				
 				//alert("flagname="+flagname);
 				//alert("flagemail="+flagemail);
 				//alert("flagbirthday="+flagbirthday);
@@ -413,37 +350,25 @@ Released   : 20102110
 		<tr><td><b>Name</b></td><td><input type="text" size="20" id="txt1" onblur="name1()" name="name"><span id="sp1"></span></td></tr>
 		<tr><td><b>Email</b></td><td><input type="text" size="20" id="txt2" onblur="email1()" name="email"><span id="sp2"></span></td></tr>
 		<tr><td><b>Birthday</b></td><td><input type="text" size="20" id="txt3" onblur="isDate()" name="birthDay"><span id="sp3">mm/dd/yyyy</span></td></tr>
-		<tr><td><b>Adress</b></td><td><input type="text" size="20" id="txt4" name="adress" onblur="adress1()"><span id="sp4"></span></td></tr>
+		
 		<tr><td><b></>Credit Limit</b></td><td><input type="text" size="20" id="txt5" onblur="credit1()" name="credit"><span id="sp5"></span></td></tr>
                 <tr><td><b>Job</b></td><td><input type="text" size="20" id="txt6" name="job" onblur="job1()"><span id="sp6"></span></td></tr>
                 <tr><td><b>interests</b></td><td><input type="text" size="20" id="txt15" name="interests" onblur="interests1()"><span id="sp15"></span></td></tr>
 		<tr><td><b>Password</b></td><td><input type="password" size="20" id="txt7" onblur="validatePwd()" name="password"><span id="sp7"></span></td></tr>
 		<tr><td><b>Confirm Password</b></td><td><input type="password" size="20" id="txt8" onblur="confirm1()" name="confirm"><span id="sp8"></span></td></tr>
-		<tr><td align="left" colspan="2"></><b></>Gender</b></td></tr>
-		<tr><td><input type="radio" name="sex" value="male">male </td>
-		<td><input type="radio" name="sex" value="female">female</td><tr>
+		
 		<tr><td colspan="2"><span id="sp9"></span></td></tr>
-		<tr><td align="left" colspan="2"></><b></>Select your Interest</b></td></tr>
+		
 		<tr><td colspan="2" rowspan="2"></td></tr>
 		<tr></tr>
-		<tr><td align="left" colspan="2"></><b></>Nationality</b></td></tr>
-		<tr><td colspan="2">
-			<div>
-			<select id="sel1" name="nationality">
-				<option value="choose any option">choose any option</option>
-				<option value="egypt">egypt</option>
-				<option value="france">france</option>
-				<option value="united states">united states</option>
-			</select>
-			</div>
-				</td></tr>
+		
 		<tr><td colspan="2"><span id="sp11"></span></td></tr>
 		<tr><td colspan="2" rowspan="4"></td></tr>
 		<tr></tr>
 		<tr></tr>
 		<tr></tr>
 		<tr><td colspan="2"><span id="sp7"></span></td></tr>
-		<tr><td><input type="submit" value="Sine Up" >
+		<tr><td><input type="submit" value="Sign Up" >
 		</td><td><input type="reset" value="Reset"></td></tr>
 
 		</table>
