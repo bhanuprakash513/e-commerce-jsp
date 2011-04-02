@@ -26,8 +26,8 @@ public class EditProductInDb extends HttpServlet {
    ProductBean ppage;
    Categories c;
    AdminService_Interface admin=AdminService.getServiceInstance();
-
-    /**
+   
+    /** 
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      * @param request servlet request
      * @param response servlet response
@@ -52,20 +52,20 @@ public class EditProductInDb extends HttpServlet {
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet EditProductInDb</title>");
+            out.println("<title>Servlet EditProductInDb</title>");  
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet EditProductInDb at " + request.getContextPath () + "</h1>");
             out.println("</body>");
             out.println("</html>");
             */
-        } finally {
+        } finally { 
            // out.close();
         }
-    }
+    } 
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
+    /** 
      * Handles the HTTP <code>GET</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -76,9 +76,9 @@ public class EditProductInDb extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         processRequest(request, response);
-    }
+    } 
 
-    /**
+    /** 
      * Handles the HTTP <code>POST</code> method.
      * @param request servlet request
      * @param response servlet response
@@ -91,7 +91,7 @@ public class EditProductInDb extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
+    /** 
      * Returns a short description of the servlet.
      * @return a String containing servlet description
      */
