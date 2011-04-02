@@ -74,7 +74,7 @@ Released   : 20102110
                     <h2 class="title">Admin Product</h2>
                     <div class="entry">
                         <br>
-                        <form name="lab3" action="index.jsp" onsubmit="return category()">
+                        <form name="lab3" action="CategoryAddingInDb.jsp" onsubmit="return category()">
                             <table>
                                 <tr><td><b>Category Name</b></td><td><input type="text" size="20" id="txt1"  name="categoryName"><span id="sp1"></span></td></tr>
                                 <tr><td>&nbsp;&nbsp; </td><td></td> &nbsp;&nbsp;</tr>
