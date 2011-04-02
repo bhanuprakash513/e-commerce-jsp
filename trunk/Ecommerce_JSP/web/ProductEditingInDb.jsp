@@ -23,7 +23,7 @@ Released   : 20102110
 <%@include file="Header.jsp" %>
 <jsp:useBean class="pagesbeans.ProductBean" id="product" scope="request"/>
 <jsp:setProperty property="*" name="product"/>
-<jsp:include page="AddProductToDb"/>
+<jsp:include page="EditProductInDb"/>
 <div id="menu">
     <ul>
         <li class="current_page_item"><a href="#">Home</a></li>
