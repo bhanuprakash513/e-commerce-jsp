@@ -54,7 +54,11 @@ Released   : 20102110
                                 <a href="CategoryAdding.jsp"><font color="green" size="5">Add Category</font></a>
 				<br>
 				<br>
-                                <a href="#"><font color="green" size="5">View All Users</font></a></center>
+                                <a href="#"><font color="green" size="5">View All Users</font></a>
+                                <br>
+				<br>
+                                <a href="ViewAllProducts.jsp"><font color="green" size="5">View All Users</font></a>
+                        </center>
                         <br><br><br><br><br><br>
                     </div>
                 </div>
