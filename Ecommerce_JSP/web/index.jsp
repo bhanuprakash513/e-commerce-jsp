@@ -19,6 +19,7 @@
         <div id="page">
             <div id="page-bgtop">
                <div id="page-bgbtm">
+                   sdffsdcsca
 
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="product.jsp" />
@@ -28,5 +29,4 @@
         </div>
     </body>
 </html>
-
 
