@@ -4,6 +4,12 @@
     Author     : islam
 --%>
 
+<%@page import="databeans.Categories"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="databeans.model.UserService"%>
+<%@page import="databeans.model.UserService_Interface"%>
+<%@page import="databeans.model.AdminService_Interface"%>
+<%@page import="databeans.model.AdminService"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,6 +26,7 @@ Version    : 1.0
 Released   : 20102110
 
 -->
+<%@taglib prefix="c"uri="http://java.sun.com/jstl/core" %>
 <%@include file="Header.jsp" %>
 <script>
     var flagpname=false;
@@ -185,7 +192,8 @@ function Validate() {
 			}
 
 </script>
-
+<%! UserService_Interface user=UserService.getServiceInstance();%>
+<%!ArrayList<Categories> categories=user.getAllCategories();%>
 <div id="menu">
     <ul>
         <li class="current_page_item"><a href="#">Home</a></li>
@@ -219,9 +227,8 @@ function Validate() {
                                         <div>
                                             <select id="sel1" name="category">
                                                 <option value="choose the category">Choose The Category</option>
-                                                <option value="egypt">egypt</option>
-                                                <option value="france">france</option>
-                                                <option value="united states">united states</option>
+                                                <jsp:include page="ExtractAllCategories"/>
+                                                   
                                             </select>
                                         </div>
                                     </td></tr>
@@ -241,12 +248,7 @@ function Validate() {
                     <li>
                         <h2>Categories</h2>
                         <ul>
-                            <li><a href="#">Aliquam libero</a></li>
-                            <li><a href="#">Consectetuer adipiscing elit</a></li>
-                            <li><a href="#">Metus aliquam pellentesque</a></li>
-                            <li><a href="#">Suspendisse iaculis mauris</a></li>
-                            <li><a href="#">Urnanet non molestie semper</a></li>
-                            <li><a href="#">Proin gravida orci porttitor</a></li>
+                            <jsp:include page="ExtractAllCategoriesInSide"/>
                             <br><br><br><br><br><br><br><br><br>
                         </ul>
                     </li>
