@@ -20,6 +20,14 @@
         <servlet-name>ViewAllproductsForAdmin</servlet-name>
         <servlet-class>servlets.ViewAllproductsForAdmin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Category</servlet-name>
+        <servlet-class>servlets.Category</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Product</servlet-name>
+        <servlet-class>servlets.Product</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddProductToDb</servlet-name>
         <url-pattern>/AddProductToDb</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>ViewAllproductsForAdmin</servlet-name>
         <url-pattern>/ViewAllproductsForAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Category</servlet-name>
+        <url-pattern>/Category</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Product</servlet-name>
+        <url-pattern>/Product</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
