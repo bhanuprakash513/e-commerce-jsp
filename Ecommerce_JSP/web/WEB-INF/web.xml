@@ -4,9 +4,41 @@
         <servlet-name>AddProductToDb</servlet-name>
         <servlet-class>servlets.AddProductToDb</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCategoryToDb</servlet-name>
+        <servlet-class>servlets.AddCategoryToDb</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExtractAllCategories</servlet-name>
+        <servlet-class>servlets.ExtractAllCategories</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ExtractAllCategoriesInSide</servlet-name>
+        <servlet-class>servlets.ExtractAllCategoriesInSide</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewAllproductsForAdmin</servlet-name>
+        <servlet-class>servlets.ViewAllproductsForAdmin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddProductToDb</servlet-name>
         <url-pattern>/AddProductToDb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCategoryToDb</servlet-name>
+        <url-pattern>/AddCategoryToDb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExtractAllCategories</servlet-name>
+        <url-pattern>/ExtractAllCategories</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ExtractAllCategoriesInSide</servlet-name>
+        <url-pattern>/ExtractAllCategoriesInSide</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewAllproductsForAdmin</servlet-name>
+        <url-pattern>/ViewAllproductsForAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
