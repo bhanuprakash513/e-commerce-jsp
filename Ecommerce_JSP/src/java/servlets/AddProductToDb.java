@@ -27,7 +27,7 @@ import pagesbeans.ProductBean;
  * @author islam
  */
 public class AddProductToDb extends HttpServlet {
-   Products pdata=new Products();
+   Products pdata;
    ProductBean ppage;
    Categories c;
    AdminService_Interface admin=AdminService.getServiceInstance();
@@ -44,6 +44,7 @@ public class AddProductToDb extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             ppage=(ProductBean)request.getAttribute("product");
+            pdata = new Products();
             pdata.setDescription(ppage.getDescription());
             pdata.setName(ppage.getProductName());
             pdata.setPrice(ppage.getPriceValue());
@@ -52,6 +53,7 @@ public class AddProductToDb extends HttpServlet {
             c=admin.getCategory(ppage.getCategory());
             pdata.setCategories(c);
             admin.addProduct(pdata);
+
             //pdata.setName(null);
 
             /* TODO output your page here
@@ -66,6 +68,7 @@ public class AddProductToDb extends HttpServlet {
             */
         } finally { 
             //out.close();
+//            admin=null;
         }
     } 
 

@@ -37,7 +37,7 @@ public class AdminService implements AdminService_Interface{
 //        Categories cat2 = (Categories)q.list().get(0);
 //        cat2.setName(cat.getName());
         session.beginTransaction();
-        session.saveOrUpdate(cat);
+        session.persist(cat);
         session.getTransaction().commit();
         System.out.println("category added");
     }
@@ -45,8 +45,9 @@ public class AdminService implements AdminService_Interface{
     public void addProduct(Products item) {
 //        throw new UnsupportedOperationException("Not supported yet.");
         session.beginTransaction();
-        session.saveOrUpdate(item);
+        session.persist(item);
         session.getTransaction().commit();
+        
         System.out.println("product added");
     }
 
