@@ -11,6 +11,7 @@
 
 
             <div id="content">
-                 <jsp:include page="/Product" />
+                dssdfsd
+                 <jsp:include page="Product" />
             </div>
 
