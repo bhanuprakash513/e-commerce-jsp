@@ -15,7 +15,7 @@
                   <h2>Categories</h2>
                   <ul>
 
-                      <jsp:include page="/Category" />
+                      <jsp:include page="Category" />
                   </ul>
               </li>
           </ul>
