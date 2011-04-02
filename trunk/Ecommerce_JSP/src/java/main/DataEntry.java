@@ -7,17 +7,8 @@ package main;
 import databeans.*;
 import databeans.model.AdminService;
 import databeans.model.AdminService_Interface;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
-import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
+import databeans.model.UserService;
+import databeans.model.UserService_Interface;
 
 /**
  *
@@ -26,10 +17,19 @@ import org.hibernate.criterion.Restrictions;
 public class DataEntry {
     public static void main(String[] args) {
         AdminService_Interface admin = AdminService.getServiceInstance();
-        Categories cat = new Categories("books");
-        cat.setId(10);
-        //admin.addProduct(new Products(cat, "7 hats", 100, "none"));
-        admin.addCategory(new Categories("egypt"));
+        UserService_Interface usr = UserService.getServiceInstance();
+        Categories cat = new Categories("England");
+        cat.setId(11);
+        admin.addCategory(cat);
+//        Users user = new Users("Mahmoud Gamal", new Date(88,0,1), "mahmoud.elrefaie@gmail.com",
+//                "123", "Engineer", 10000.0, "Science", null);
+//        usr.signUp(user);
+
+//        System.out.println(admin.getCategory("egypt").getId());
+//        Categories cat = new Categories("books");
+//        cat.setId(10);
+//        //admin.addProduct(new Products(cat, "7 hats", 100, "none"));
+//        admin.addCategory(new Categories("egypt"));
 //        SessionFactory factory = new Configuration().configure().buildSessionFactory();
 //        Session session = factory.openSession();
 //        Categories cat = new Categories("Planes");
