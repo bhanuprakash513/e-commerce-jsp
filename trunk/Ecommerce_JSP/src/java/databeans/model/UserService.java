@@ -253,4 +253,34 @@ public class UserService implements UserService_Interface{
         Query q = session.createQuery(queryString);
         return (ArrayList<Categories>)q.list();
     }
+
+    public Products getProductByID(int pid) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+        String queryString = "FROM Products WHERE productId=:pid";
+        Query q = session.createQuery(queryString);
+        q.setInteger("pid", pid);
+        return (Products)q.list().get(0);
+    }
+
+    public Bills getCartByID(int cartID) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        String queryString = "FROM Bills WHERE BillId=:cartid";
+        Query q = session.createQuery(queryString);
+        q.setInteger("cartid", cartID);
+        return (Bills)q.list().get(0);
+    }
+
+    public boolean isNameExists(String username) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        String queryString = "FROM Users WHERE email=:uname";
+        Query q = session.createQuery(queryString);
+        q.setString("uname", username);
+        if(q.list().isEmpty()){
+            //means that no matches for username found in DB, entered email is available
+            return false;
+        }
+        //means that name is already registered, must enter another email
+        return true;
+    }
+
 }

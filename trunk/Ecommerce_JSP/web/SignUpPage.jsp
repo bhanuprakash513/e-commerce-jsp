@@ -201,7 +201,8 @@ Released   : 20102110
 
 			}
 			function isDate(){
-				var re = /^(\d{1,2})[\s\.\/-](\d{1,2})[\s\.\/-](\d{4})$/
+				//var re = /^(\d{1,2})[\s\.\/-](\d{1,2})[\s\.\/-](\d{4})$/
+                                var re = /^(\d{1,2})[\s\/](\d{1,2})[\s\/](\d{4})$/
 				if (!re.test(document.getElementById("txt3").value)) {
 					flagbirthday=false;
 					document.getElementById("sp3").innerHTML="enter the birthday on the form mm/dd/yyyy";
@@ -345,7 +346,7 @@ Released   : 20102110
                     <h2 class="title">User Main Page</h2>
                     <div class="entry">
                         <br>
-                        <form name="lab3" action="index1.jsp" onsubmit="return all();">
+                        <form name="lab3" action="AddUserInDb.jsp" onsubmit="return all();">
 		<table>
 		<tr><td><b>Name</b></td><td><input type="text" size="20" id="txt1" onblur="name1()" name="name"><span id="sp1"></span></td></tr>
 		<tr><td><b>Email</b></td><td><input type="text" size="20" id="txt2" onblur="email1()" name="email"><span id="sp2"></span></td></tr>
