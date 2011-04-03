@@ -218,7 +218,8 @@ function Validate() {
                         <form name="lab3" action="ProductAddingInDb.jsp" onsubmit="productName1();price();quantities();describe();return check();">
                             <table>
                                 <%--<jsp:include page="EditProduct"/>--%>
-                               <%@include file="EditProduct" %>
+                                <jsp:include page="EditProduct"/>
+                                <%--<%@include page="EditProduct" %>--%>
                                 <tr><td align="left" colspan="2"></><b></>Nationality</b></td></tr>
                                 <tr><td colspan="2">
                                         <div>
