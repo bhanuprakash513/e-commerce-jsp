@@ -65,7 +65,7 @@ public interface UserService_Interface {
      */
     boolean addToCart(Transactions t);
     /**
-     *removes a transaction from user cart
+     *removes a transaction from user cart using the transaction id
      * @param tid
      */
     void removeFromCart(int tid);
@@ -79,6 +79,26 @@ public interface UserService_Interface {
      * @return list of all categories
      */
     ArrayList<Categories> getAllCategories();
+    /**
+     * returns a product based on its id in database
+     * @param pid the product id
+     * @return a Hibernate object representing product in DB
+     */
+    Products getProductByID(int pid);
+    /**
+     * gets a Bills object saved on the session by its ID, the flag _final must be false
+     * meaning that the bill is actually a cart
+     * @param cartID the id of the unfinal bill
+     * @return a Hibernate object representing cart in DB
+     */
+    Bills getCartByID(int cartID);
+    /**
+     * checks  if the username is already registered in DB before
+     * @param username user entered name
+     * @return true if user already registered
+     * false otherwise
+     */
+    boolean isNameExists(String username);
     
     
 }

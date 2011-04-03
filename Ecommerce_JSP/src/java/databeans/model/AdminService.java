@@ -31,11 +31,6 @@ public class AdminService implements AdminService_Interface{
 
     public void addCategory(Categories cat) {
 //        throw new UnsupportedOperationException("Not supported yet.");
-//        String queryString = "FROM Categories WHERE id=:catID";
-//        Query q = session.createQuery(queryString);
-//        q.setInteger("catID", cat.getId());
-//        Categories cat2 = (Categories)q.list().get(0);
-//        cat2.setName(cat.getName());
         session.beginTransaction();
         session.persist(cat);
         session.getTransaction().commit();

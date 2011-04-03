@@ -37,7 +37,7 @@ public class Product extends HttpServlet {
 
         UserService_Interface user = UserService.getServiceInstance();
         ////////////////////////////////////////////////
-        Set<Products> set = user.getCategoryProducts((Integer)request.getAttribute("catId"));
+        Set<Products> set = user.getCategoryProducts(1);
         for(Products p : set){
             out.println("<div class=\"post\">");
 

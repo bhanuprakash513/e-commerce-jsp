@@ -36,6 +36,18 @@
         <servlet-name>EditProductInDb</servlet-name>
         <servlet-class>servlets.EditProductInDb</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddUserToDb</servlet-name>
+        <servlet-class>servlets.AddUserToDb</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToCart</servlet-name>
+        <servlet-class>servlets.AddToCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OneProduct</servlet-name>
+        <servlet-class>servlets.OneProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddProductToDb</servlet-name>
         <url-pattern>/AddProductToDb</url-pattern>
@@ -71,6 +83,18 @@
     <servlet-mapping>
         <servlet-name>EditProductInDb</servlet-name>
         <url-pattern>/EditProductInDb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddUserToDb</servlet-name>
+        <url-pattern>/AddUserToDb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToCart</servlet-name>
+        <url-pattern>/AddToCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OneProduct</servlet-name>
+        <url-pattern>/OneProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
