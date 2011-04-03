@@ -37,7 +37,7 @@ public class Category extends HttpServlet {
         UserService_Interface user = UserService.getServiceInstance();
         ArrayList<Categories> list = user.getAllCategories();
         for(Categories cat : list){
-            out.println("<li><a href=\"Product?catId="+cat.getId()
+            out.println("<li><a href=\"ShowCategory.jsp?catId="+cat.getId()
                         +"\">"+cat.getName()+"</a></li>");
         }
 //        Categories[] categoryBeanArr ;
