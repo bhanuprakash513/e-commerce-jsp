@@ -4,7 +4,9 @@
  */
 
 package servlets;
-
+import databeans.Transactions;
+import databeans.Products;
+import databeans.model.UserService;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -29,6 +31,20 @@ public class AddToCart extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+                
+        int quantity = Integer.valueOf(request.getParameter("quantity"));
+        int productId = Integer.valueOf(request.getParameter("productId"));
+        Products P = new Products();
+        P.setProductId(productId);
+
+        Transactions trans = new Transactions();
+        trans.setQuantity(quantity);
+        trans.setProducts(P);
+
+        out.println(trans.getProducts().getProductId()+"  "+ trans.getQuantity());
+
+
+        
         try {
             /* TODO output your page here
             out.println("<html>");
