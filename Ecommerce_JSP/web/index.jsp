@@ -13,13 +13,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>e-commerce home</title>
     </head>
     <body>
         <div id="page">
             <div id="page-bgtop">
                <div id="page-bgbtm">
-                   sdffsdcsca
+                   the page itself !!!
 
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="product.jsp" />
