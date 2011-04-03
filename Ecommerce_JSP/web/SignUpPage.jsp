@@ -342,7 +342,7 @@ Released   : 20102110
         <div id="page-bgbtm">
             <div id="content">
                 <div class="post">
-                    <h2 class="title">Admin Product</h2>
+                    <h2 class="title">User Main Page</h2>
                     <div class="entry">
                         <br>
                         <form name="lab3" action="index1.jsp" onsubmit="return all();">
@@ -386,12 +386,7 @@ Released   : 20102110
                     <li>
                         <h2>Categories</h2>
                         <ul>
-                            <li><a href="#">Aliquam libero</a></li>
-                            <li><a href="#">Consectetuer adipiscing elit</a></li>
-                            <li><a href="#">Metus aliquam pellentesque</a></li>
-                            <li><a href="#">Suspendisse iaculis mauris</a></li>
-                            <li><a href="#">Urnanet non molestie semper</a></li>
-                            <li><a href="#">Proin gravida orci porttitor</a></li>
+                           <jsp:include page="ExtractAllCategoriesInSide"/>
                             <br><br><br><br><br><br><br><br><br>
                         </ul>
                     </li>
