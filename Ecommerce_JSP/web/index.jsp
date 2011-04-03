@@ -1,4 +1,4 @@
-<%--
+<<%--
     Document   : index
     Created on : 26/03/2011, 09:22:26 ص
     Author     : Mohamed
@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>e-commerce home</title>
+        <title>JSP Page</title>
     </head>
     <body>
         <div id="page">
@@ -24,7 +24,7 @@
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="product.jsp" />
 
-                </div>
+                   </div>
             </div>
         </div>
     </body>
