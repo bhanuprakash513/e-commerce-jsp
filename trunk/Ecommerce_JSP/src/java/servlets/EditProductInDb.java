@@ -46,6 +46,7 @@ public class EditProductInDb extends HttpServlet {
             pdata.setPrice(ppage.getPriceValue());
             pdata.setPictureLink(ppage.getPicturePath());
             pdata.setQuantity(ppage.getQuantity());
+            System.out.println(ppage.getCategory());
             c=admin.getCategory(ppage.getCategory());
             pdata.setCategories(c);
             admin.modifyProduct(pdata);

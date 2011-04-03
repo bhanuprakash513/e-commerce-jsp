@@ -28,6 +28,14 @@
         <servlet-name>Product</servlet-name>
         <servlet-class>servlets.Product</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditProduct</servlet-name>
+        <servlet-class>servlets.EditProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductInDb</servlet-name>
+        <servlet-class>servlets.EditProductInDb</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddProductToDb</servlet-name>
         <url-pattern>/AddProductToDb</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>Product</servlet-name>
         <url-pattern>/Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProduct</servlet-name>
+        <url-pattern>/EditProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProductInDb</servlet-name>
+        <url-pattern>/EditProductInDb</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
