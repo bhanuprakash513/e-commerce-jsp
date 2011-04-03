@@ -22,7 +22,9 @@
                    the page itself !!!
 
                    <jsp:include page="Category.jsp" />
-                   <jsp:include page="product.jsp" />
+                   <jsp:include page="product.jsp" >
+                         <jsp:param name="catId" value="1"/>
+                   </jsp:include>
 
                    </div>
             </div>
