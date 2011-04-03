@@ -1,19 +1,13 @@
-<%-- 
+<%--
     Document   : AddToCart
-    Created on : Apr 3, 2011, 5:20:29 PM
-    Author     : mahmoud
+    Created on : 03/04/2011, 03:31:35 م
+    Author     : Mohamed
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
    "http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+            <div id="content">
+                     <jsp:include page="AddToCart" />
+            </div>
