@@ -5,6 +5,8 @@
 
 package servlets;
 import databeans.Products;
+import databeans.model.UserService;
+import databeans.model.UserService_Interface;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -33,8 +35,9 @@ public class OneProduct extends HttpServlet {
 
         int productId = Integer.valueOf(request.getParameter("productId"));
 
-
-        Products p = new Products();
+       UserService_Interface user = UserService.getServiceInstance();
+        Products p = user.getProductByID(productId);
+/*
         p.setDescription("sdfjknkjnknklnjlbnkljblbiklnbj jnsjknckdsnfijsdnfisdnfinsdifdsifusd dsnfisndifinsinsnf "
                 + "fdsnfsoidfnsfnsfdnsufns");
         p.setPrice(6);
@@ -42,7 +45,7 @@ public class OneProduct extends HttpServlet {
         p.setName("sfd");
         p.setQuantity(60);
         p.setPictureLink("http://localhost:8081/delete/images/1.jpg");
-
+*/
         try {
             out.println("<div class=\"post\">");
                 out.println("<h2 class=\"title\"><p> <a href=\"\">"+p.getName()+"</a></h2>");
