@@ -19,12 +19,13 @@
         <div id="page">
             <div id="page-bgtop">
                <div id="page-bgbtm">
-                   the page itself !!!
+                   Welcome to homepage !!!
 
                    <jsp:include page="Category.jsp" />
-                   <jsp:include page="product.jsp" >
+               <jsp:include page="product.jsp" >
                          <jsp:param name="catId" value="1"/>
-                   </jsp:include>
+                   </jsp:include><>
+
 
                    </div>
             </div>
