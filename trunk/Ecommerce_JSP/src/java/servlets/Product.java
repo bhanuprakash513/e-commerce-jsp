@@ -39,27 +39,27 @@ public class Product extends HttpServlet {
         ////////////////////////////////////////////////
         Set<Products> set = user.getCategoryProducts(1);
         for(Products p : set){
-            out.println("<div class=\"post\">");
 
-                out.println("<h2 class=\"title\"><p><input type=\"checkbox\" name=\"vehicle\" value=\""
-                        +p.getProductId()+"\" /> <a href=\"#\">"+p.getName()+"</a></h2>");
+                out.println("<div class=\"post\">");
+                out.println("<h2 class=\"title\"><p>" +"<a href = ShowProduct.jsp?productId="+p.getProductId()+">"+p.getName()+"</a></p></h2>");
                 out.println("<div class=\"entry\">");
-                out.print(""
-                        + "<div><img src="+p.getPictureLink()+ " height = 80 width =80 />"
+                out.print("<form action= AddToCart.jsp?productId="+p.getProductId()+" method = \"POST\">"
+                        + "<img href = ShowProduct.jsp?productId="+p.getProductId()+" src="+p.getPictureLink()+ " height = 70 width =70 />"
                         +"<strong> Price = " + p.getPrice()+"</strong>"+ " Discription : "
-                        +p.getDescription()+"</div> ");
+                        +p.getDescription()+"<a href = ShowProduct.jsp?productId="+p.getProductId()+"><font color = \"blue\">...More->></font></a>" );
                 out.println("<p align = right>"
-                        + "<select name=mytextarea size=1>");
-                out.println("<option name= "+0+" value= "+"0"+">--Quantity-- </option>");
+                        + "<select name=quantity size=1>");
+                out.println("<option name= "+0+" value= \""+1+"\">Quantity</option>");
 
-//                for(int x =1;x<P.get(i).getQuantity()+1;x++)
-//                {
-//                    out.println("<option name= "+x+" value= "+x+">"+x+" </option>");
-//                }
-                out.println("</select></p>");
+                for(int x =1;x<p.getQuantity()+1;x++)
+                {
+                    out.println("<option name= "+x+" value= "+x+">"+x+" </option>");
+                }
+                out.print("</select>");
+		out.println("<input type =\"submit\" value = \"Add to Cart\"/>");
+                out.println("</form></div>");
 		out.println("</div>");
-		out.println("</div>");
-        }
+}
         //////////////////////////////////////////////////////////////////////
 
 //        ArrayList<Products> P = new ArrayList<Products>();
