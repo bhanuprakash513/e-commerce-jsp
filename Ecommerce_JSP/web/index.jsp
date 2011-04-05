@@ -16,11 +16,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <div id="page">
-            <div id="page-bgtop">
-               <div id="page-bgbtm">
 
-                   <%
+
+        <%
                    HttpSession se = request.getSession();
                    if (se.getAttribute("status")!= null){
                        if(se.getAttribute("status").toString().equals("user"))
@@ -36,6 +34,13 @@
                        pageContext.include("Header.jsp");
                    }
                    %>
+
+
+        <div id="page">
+            <div id="page-bgtop">
+               <div id="page-bgbtm">
+
+                   
 
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="product.jsp" >
