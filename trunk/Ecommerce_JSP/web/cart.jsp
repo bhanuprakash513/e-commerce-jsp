@@ -26,7 +26,7 @@
                    <jsp:include page="ShowCart"/>
                         <form action="SubmitCart">
                             <input type="submit" value="Buy">
-                        </form>>
+                        </form>
                    </div>
             </div>
         </div>

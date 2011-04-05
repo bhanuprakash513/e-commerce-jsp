@@ -20,10 +20,35 @@ Version    : 1.0
 Released   : 20102110
 
 -->
- <jsp:include page="LoadHeader" />
-<jsp:useBean class="pagesbeans.CategoryBean" id="category" scope="request"/>
-<jsp:setProperty property="*" name="category"/>
-<jsp:include page="AddCategoryToDb"/>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="REFRESH" content="5;url=SignIn.jsp"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Zion Narrows   by Free CSS Templates</title>
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+</head>
+<body>
+
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<img src="images/imageExample.gif" width="120" height="80">
+		</div>
+		<div id="search">
+			<form method="get" action="">
+				<fieldset>
+				<b><a href="#"><font color="white">sign up</font></a></b>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<b><a href="#"><font color="white">sign in</font></a></b>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
 <div id="menu">
     <ul>
         <li class="current_page_item"><a href="#">Home</a></li>
@@ -42,27 +67,37 @@ Released   : 20102110
         <div id="page-bgbtm">
             <div id="content">
                 <div class="post">
-                    <h2 class="title">Admin Product</h2>
+                    <h2 class="title">Invalid</h2>
                     <div class="entry">
-                        <br><br><br><br><br><br><br><br><br>
-                        <center><h1><font color="green"><b>The Category has been added successfully</b></font></h1></center>
-                        <br><br><br><br><br><br>
-                        <center>
-                            <a href="AddProductPage.jsp"><font color="green" size="5">Add Product</font></a>
-				<br>
-				<br>
-                                <a href="CategoryAdding.jsp"><font color="green" size="5">Add An Other Category</font></a>
-				<br>
-				<br>
-                                <a href="#"><font color="green" size="5">View All Users</font></a></center>
-                        <br><br><br><br><br><br>
+                        <br>
+                        <h1>invalid user name and password</h1>
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     </div>
                 </div>
 
                 <div style="clear: both;">&nbsp;</div>
             </div>
             <!-- end #content -->
-           <jsp:include page="Category.jsp" />
+            <div id="sidebar">
+                <ul>
+                    <li>
+                    </li>
+                    <li>
+                        <h2>Categories</h2>
+                        <ul>
+                            <jsp:include page="ExtractAllCategoriesInSide"/>
+                            <br><br><br><br><br><br><br><br><br>
+                        </ul>
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- end #sidebar -->
             <div style="clear: both;">&nbsp;</div>
         </div>
     </div>

@@ -9,6 +9,7 @@ import databeans.model.AdminService;
 import databeans.model.AdminService_Interface;
 import databeans.model.UserService;
 import databeans.model.UserService_Interface;
+import java.util.Set;
 
 /**
  *
@@ -18,9 +19,21 @@ public class DataEntry {
     public static void main(String[] args) {
         AdminService_Interface admin = AdminService.getServiceInstance();
         UserService_Interface usr = UserService.getServiceInstance();
-        Categories cat = new Categories("England");
-        cat.setId(11);
-        admin.addCategory(cat);
+        Users u = usr.getUser(6);
+        u.setInterests("football");
+        usr.editUser(u);
+//        Categories cat = new Categories("England");
+//        cat.setId(11);
+//        admin.addCategory(cat);
+//        Set<Bills> set = usr.getUser(6).getBillses();
+//        for(Bills bill : set){
+//            System.out.println(bill.isFinal_());
+//        }
+
+        //System.out.println(usr.signIn("yousri@msn.com", "123456"));
+
+//        System.out.println("picture is: "+usr.getProductByID(19).getPictureLink());
+        //System.out.println(usr.getCartByID(8).getDate());
 //        Users user = new Users("Mahmoud Gamal", new Date(88,0,1), "mahmoud.elrefaie@gmail.com",
 //                "123", "Engineer", 10000.0, "Science", null);
 //        usr.signUp(user);

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <filter>
+        <filter-name>uploadFilter</filter-name>
+        <filter-class>com.oreilly.servlet.MultipartFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>uploadFilter</filter-name>
+        <url-pattern>/AddProductToDb</url-pattern>
+    </filter-mapping>
     <servlet>
         <servlet-name>AddProductToDb</servlet-name>
         <servlet-class>servlets.AddProductToDb</servlet-class>
@@ -48,6 +56,43 @@
         <servlet-name>OneProduct</servlet-name>
         <servlet-class>servlets.OneProduct</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SignInChecking</servlet-name>
+        <servlet-class>servlets.SignInChecking</servlet-class>
+        <init-param>
+            <param-name>admin</param-name>
+            <param-value>ecommerce</param-value>
+        </init-param>
+        <init-param>
+            <param-name>password</param-name>
+            <param-value>yarab</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowCart</servlet-name>
+        <servlet-class>servlets.ShowCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SubmitCart</servlet-name>
+        <servlet-class>servlets.SubmitCart</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProfileInDb</servlet-name>
+        <servlet-class>servlets.EditProfileInDb</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProfile</servlet-name>
+        <servlet-class>servlets.EditProfile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignOut</servlet-name>
+        <servlet-class>servlets.SignOut</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadHeader</servlet-name>
+        <servlet-class>servlets.LoadHeader</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>AddProductToDb</servlet-name>
         <url-pattern>/AddProductToDb</url-pattern>
@@ -95,6 +140,34 @@
     <servlet-mapping>
         <servlet-name>OneProduct</servlet-name>
         <url-pattern>/OneProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignInChecking</servlet-name>
+        <url-pattern>/SignInChecking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowCart</servlet-name>
+        <url-pattern>/ShowCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SubmitCart</servlet-name>
+        <url-pattern>/SubmitCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfileInDb</servlet-name>
+        <url-pattern>/EditProfileInDb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProfile</servlet-name>
+        <url-pattern>/EditProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignOut</servlet-name>
+        <url-pattern>/SignOut</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoadHeader</servlet-name>
+        <url-pattern>/LoadHeader</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

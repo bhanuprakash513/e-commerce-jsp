@@ -7,8 +7,10 @@ package servlets;
 import databeans.Transactions;
 import databeans.Products;
 import databeans.model.UserService;
+import databeans.model.UserService_Interface;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,17 +33,31 @@ public class AddToCart extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-                
+        UserService_Interface user = UserService.getServiceInstance();
         int quantity = Integer.valueOf(request.getParameter("quantity"));
         int productId = Integer.valueOf(request.getParameter("productId"));
-        Products P = new Products();
-        P.setProductId(productId);
-
+        Products P = user.getProductByID(productId);
+        // u should get cart ID from session object from here, for now we set it as static
+        int cartID = (Integer)request.getSession().getAttribute("cartID");
         Transactions trans = new Transactions();
         trans.setQuantity(quantity);
         trans.setProducts(P);
+        trans.setBills(user.getCartByID(cartID));
+//        out.println(trans.getProducts().getProductId()+"  "+ trans.getQuantity());
+        if(user.addToCart(trans)){
+            RequestDispatcher rd = request.getRequestDispatcher
+                    ("ShowCategory.jsp?catId="+P.getCategories().getId());
+            rd.forward(request, response);
+        }
+        else{
+            //request.setAttribute("catId", P.getCategories().getId());
+//            RequestDispatcher rd = request.getRequestDispatcher
+//                    ("ShowCategory.jsp?catId='"+request.getParameter("catId")+"'");
+            out.println("not enough money");
+//            rd.include(request, response);
+        }
 
-        out.println(trans.getProducts().getProductId()+"  "+ trans.getQuantity());
+
 
 
         

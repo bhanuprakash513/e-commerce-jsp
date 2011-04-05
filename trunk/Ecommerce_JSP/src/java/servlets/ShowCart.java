@@ -42,7 +42,16 @@ public class ShowCart extends HttpServlet {
             Set<Transactions> set = user.getCartByID(cartID).getTransactionses();
 //            request.setAttribute("transactions",
 //                    (Set<Transactions>)user.getCartByID(cartID).getTransactionses());
-            out.println("<table>");
+            out.println("<div class=\"post\">");
+            out.println("<h2 class=\"title\"><p> Cart </p></h2>");
+            out.println("<div class=\"entry\">");
+
+            out.println("<table border='2'>");
+            out.println("<tr>");
+            out.println("<th>item</th>");
+            out.println("<th>quantity</th>");
+            out.println("<th>price</th>");
+            out.println("</tr>");
             for(Transactions t : set){
                 int price = t.getQuantity() * t.getProducts().getPrice();
                 out.println("<tr>");
@@ -59,6 +68,8 @@ public class ShowCart extends HttpServlet {
 
             }
             out.println("</table>");
+           // out.println("</div>");
+           // out.println("</div>");
         } finally { 
             //out.close();
         }

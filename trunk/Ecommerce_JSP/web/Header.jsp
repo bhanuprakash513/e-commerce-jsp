@@ -27,9 +27,9 @@
 		<div id="search">
 			<form method="get" action="">
 				<fieldset>
-				<b><a href="#"><font color="white">sign up</font></a></b>
+				<b><a href="SignUpPage.jsp"><font color="white">sign up</font></a></b>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<b><a href="#"><font color="white">sign in</font></a></b>
+				<b><a href="SignIn.jsp"><font color="white">sign in</font></a></b>
 				</fieldset>
 			</form>
 		</div>

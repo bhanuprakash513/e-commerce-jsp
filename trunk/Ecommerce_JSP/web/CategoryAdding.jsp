@@ -20,7 +20,7 @@ Version    : 1.0
 Released   : 20102110
 
 -->
-<%@include file="Header.jsp" %>
+<jsp:include page="LoadHeader" />
 <script>
     var flagpname=false;
     var flagprice=false;
@@ -91,31 +91,7 @@ Released   : 20102110
                 <div style="clear: both;">&nbsp;</div>
             </div>
             <!-- end #content -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                    </li>
-                    <li>
-                        <h2>Categories</h2>
-                        <ul>
-                            <li><a href="#">Aliquam libero</a></li>
-                            <li><a href="#">Consectetuer adipiscing elit</a></li>
-                            <li><a href="#">Metus aliquam pellentesque</a></li>
-                            <li><a href="#">Suspendisse iaculis mauris</a></li>
-                            <li><a href="#">Urnanet non molestie semper</a></li>
-                            <li><a href="#">Proin gravida orci porttitor</a></li>
-                            <br><br><br><br><br><br><br><br><br>
-                        </ul>
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-            </div>
-            <!-- end #sidebar -->
+            <jsp:include page="Category.jsp" />
             <div style="clear: both;">&nbsp;</div>
         </div>
     </div>

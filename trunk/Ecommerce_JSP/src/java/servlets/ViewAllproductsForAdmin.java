@@ -38,18 +38,16 @@ public class ViewAllproductsForAdmin extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             for(Products p:products){
-                out.println("<tr>"
-                        + "<td>"+p.getName()+"</td>"
-
-                        + "<td>"+p.getPrice()+"</td>"
-                        + "<td>"+p.getQuantity()+"</td>"
-                        + "<td>"+ p.getDescription()+"</td>"
-                        +"<td>"+p.getCategories().getName()+"</td>"
-                        +"<td>"+"<img src='"+"images/imageExample.gif"+ "' width='60' height='40'>"+"</td>"
+                out.println("<tr><td>"+p.getName()+"</td><td>"
+                        +p.getPrice()+"</td><td>"+p.getQuantity()+"</td><td>"
+                        +p.getDescription()+"</td><td>"
+                        +p.getCategories().getName()+"</td><td><img src='images/1.jpj' width='60' height='40'></td><td><a href='EditProduct.jsp?param="
                         
-                        + "<td><a href='EditProduct.jsp?param="+p.getProductId()+"'>Edit1344</a></td>"+
-                        "<td>"+ "<a href='#'>Delete12312</a></td>"
-                        +"</tr>");
+                        
+                        +p.getProductId()+">Edit</a></td><td><a href='#'>Delete</a></td></tr>");
+
+
+
 
             }
             /* TODO output your page here

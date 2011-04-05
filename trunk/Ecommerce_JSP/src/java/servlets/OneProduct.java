@@ -46,12 +46,13 @@ public class OneProduct extends HttpServlet {
         p.setQuantity(60);
         p.setPictureLink("http://localhost:8081/delete/images/1.jpg");
 */
+        p.setPictureLink("images/1.jpg");
         try {
             out.println("<div class=\"post\">");
                 out.println("<h2 class=\"title\"><p> <a href=\"\">"+p.getName()+"</a></h2>");
                 out.println("<div class=\"entry\">");
                 out.print("<form action= AddToCart.jsp?productId="+p.getProductId()+" method = \"POST\">"
-                        + "<p align = center ><img src="+p.getPictureLink()+ " height = 150 width =150 /></p>"
+                        + "<p align = center ><img src=\""+p.getPictureLink()+ "\"  height = 150 width =150 /></p>"
                         +"<strong> Price = " + p.getPrice()+"</strong>"+ " Discription : "
                         +p.getDescription());
                 out.println("<p align = right>"

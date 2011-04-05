@@ -33,18 +33,19 @@ public class Product extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
 
-        request.getAttribute("catId");
+        int catId = Integer.parseInt(request.getParameter("catId"));
 
         UserService_Interface user = UserService.getServiceInstance();
         ////////////////////////////////////////////////
-        Set<Products> set = user.getCategoryProducts(1);
+        Set<Products> set = user.getCategoryProducts(catId);
         for(Products p : set){
 
-                out.println("<div class=\"post\">");
+           p.setPictureLink("1.jpg");
+           out.println("<div class=\"post\">");
                 out.println("<h2 class=\"title\"><p>" +"<a href = ShowProduct.jsp?productId="+p.getProductId()+">"+p.getName()+"</a></p></h2>");
                 out.println("<div class=\"entry\">");
                 out.print("<form action= AddToCart.jsp?productId="+p.getProductId()+" method = \"POST\">"
-                        + "<img href = ShowProduct.jsp?productId="+p.getProductId()+" src="+p.getPictureLink()+ " height = 70 width =70 />"
+                        + "<img href = ShowProduct.jsp?productId="+p.getProductId()+" src=\""+p.getPictureLink()+ "\" height = 70 width =70 />"
                         +"<strong> Price = " + p.getPrice()+"</strong>"+ " Discription : "
                         +p.getDescription()+"<a href = ShowProduct.jsp?productId="+p.getProductId()+"><font color = \"blue\">...More->></font></a>" );
                 out.println("<p align = right>"

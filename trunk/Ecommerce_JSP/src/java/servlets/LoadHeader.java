@@ -71,7 +71,7 @@ public class LoadHeader extends HttpServlet {
             out.println("</html>");
             */
         } finally { 
-            out.close();
+            //out.close();
         }
     } 
 

@@ -22,7 +22,6 @@ import databeans.Users;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import org.hibernate.Query;
 
 /**
@@ -34,7 +33,7 @@ import org.hibernate.Query;
  */
 public class UserService implements UserService_Interface{
     /**
-     * used to commit transactions
+     * used to commit transactions, create queries ... etc.
      */
     private Session session;
     /**
@@ -62,7 +61,7 @@ public class UserService implements UserService_Interface{
         //throw new UnsupportedOperationException("Not supported yet.");
         Criteria loginCriteria = session.createCriteria(Users.class);
         //matchin user name
-        Criterion nameCriterion = Restrictions.eq("name", userName);
+        Criterion nameCriterion = Restrictions.eq("email", userName);
         //matching password
         Criterion passwordCriterion = Restrictions.eq("password", pwd);
         loginCriteria.add(nameCriterion).add(passwordCriterion);
@@ -84,14 +83,16 @@ public class UserService implements UserService_Interface{
         for(Bills bill : (Set<Bills>)user.getBillses()){
             if(!bill.isFinal_()){
                 flag = false;
+                break;
             }
         }
         if(flag){
             //means that client has no unpaid carts, so we create a new one for him
-            Bills cart = new Bills(result.get(0), new Date(sdf.format(cal.getTime())), 0, false);
+            Bills cart = new Bills(result.get(0), cal.getTime(), 0, false);
             session.beginTransaction();
             session.persist(cart);
             session.getTransaction().commit();
+            System.out.println("cart created for user" + user.getName());
         }
         System.out.println("login successeded");
         return true;
@@ -153,11 +154,12 @@ public class UserService implements UserService_Interface{
         if(user.getCredit() >= cart.getTotalPrice()){
             //means that user has enough credit to cover his cart
             user.setCredit(user.getCredit() - cart.getTotalPrice());
-
+            int totalPrice = 0;
             //saving transactions and reducing products at stock
             for(Transactions t : (Set<Transactions>)cart.getTransactionses()){
                 Products item = t.getProducts();
                 item.setQuantity(item.getQuantity() - t.getQuantity());
+                totalPrice += item.getPrice() * t.getQuantity();
                 session.beginTransaction();
                 session.persist(item);
                 session.getTransaction().commit();
@@ -167,7 +169,8 @@ public class UserService implements UserService_Interface{
             session.beginTransaction();
             session.persist(user);
             session.getTransaction().commit();
-
+            //setting total price of bill
+            cart.setTotalPrice(totalPrice);
             //coverting cart to bill and emptying user cart
             cart.setFinal_(true);
             session.beginTransaction();
@@ -189,6 +192,10 @@ public class UserService implements UserService_Interface{
     public boolean addToCart(Transactions t) {
 //        throw new UnsupportedOperationException("Not supported yet.");
         if(t.getProducts().getQuantity() < t.getQuantity()){
+            return false;
+        }
+        //checking for user credit limit
+        if(t.getBills().getUsers().getCredit() < (t.getQuantity() * t.getProducts().getPrice())){
             return false;
         }
         //reducing product quantity in stock
@@ -264,7 +271,8 @@ public class UserService implements UserService_Interface{
 
     public Bills getCartByID(int cartID) {
         //throw new UnsupportedOperationException("Not supported yet.");
-        String queryString = "FROM Bills WHERE BillId=:cartid";
+        System.out.println("cart id is: "+cartID);
+        String queryString = "FROM Bills b WHERE b.billId=:cartid";
         Query q = session.createQuery(queryString);
         q.setInteger("cartid", cartID);
         return (Bills)q.list().get(0);
@@ -283,4 +291,19 @@ public class UserService implements UserService_Interface{
         return true;
     }
 
+    public int getUserID(String email) {
+//        throw new UnsupportedOperationException("Not supported yet.");
+        Criteria loginCriteria = session.createCriteria(Users.class);
+        //matching user name(email)
+        Criterion nameCriterion = Restrictions.eq("email", email);
+        loginCriteria.add(nameCriterion);
+        return ((Users)loginCriteria.list().get(0)).getUid();
+    }
+
+    public void editUser(Users user) {
+        //throw new UnsupportedOperationException("Not supported yet.");
+        session.beginTransaction();
+        session.saveOrUpdate(user);
+        session.getTransaction().commit();
+    }
 }
