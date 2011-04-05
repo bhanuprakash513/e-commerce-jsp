@@ -18,22 +18,9 @@
     <body>
 
 
-        <%
-                   HttpSession se = request.getSession();
-                   if (se.getAttribute("status")!= null){
-                       if(se.getAttribute("status").toString().equals("user"))
-                            pageContext.include("HeaderUser.jsp");
-                       else if (se.getAttribute("status").toString().equals("admin"))
-                            pageContext.include("HeaderAdmin.jsp");
-                      else
-                            pageContext.include("Header.jsp");
-
-                   }
-                   else
-                   {
-                       pageContext.include("Header.jsp");
-                   }
-                   %>
+        <jsp:include page="LoadHeader" />
+                   
+                   
 
 
         <div id="page">
