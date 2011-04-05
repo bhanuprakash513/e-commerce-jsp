@@ -1,4 +1,4 @@
-<<%--
+<%--
     Document   : index
     Created on : 26/03/2011, 09:22:26 ص
     Author     : Mohamed
@@ -19,17 +19,32 @@
         <div id="page">
             <div id="page-bgtop">
                <div id="page-bgbtm">
-                   Welcome to homepage !!!
+
+                   <%
+                   HttpSession se = request.getSession();
+                   if (se.getAttribute("status")!= null){
+                       if(se.getAttribute("status").toString().equals("user"))
+                            pageContext.include("HeaderUser.jsp");
+                       else if (se.getAttribute("status").toString().equals("admin"))
+                            pageContext.include("HeaderAdmin.jsp");
+                      else
+                            pageContext.include("Header.jsp");
+
+                   }
+                   else
+                   {
+                       pageContext.include("Header.jsp");
+                   }
+                   %>
 
                    <jsp:include page="Category.jsp" />
-               <jsp:include page="product.jsp" >
-                         <jsp:param name="catId" value="1"/>
-                   </jsp:include><>
-
-
+                   <jsp:include page="product.jsp" >
+                        <jsp:param name="catId" value="5"/>
+                   </jsp:include>
                    </div>
             </div>
         </div>
     </body>
 </html>
+
 
