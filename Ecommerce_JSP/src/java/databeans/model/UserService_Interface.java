@@ -99,6 +99,15 @@ public interface UserService_Interface {
      * false otherwise
      */
     boolean isNameExists(String username);
-    
-    
+    /**
+     * returns the ID of user to be put in session object
+     * @param email the user mail as a search criteria
+     * @return integer value for user ID
+     */
+    int getUserID(String email);
+    /**
+     * edits a user in database
+     * @param user: new user data to be modified
+     */
+    void editUser(Users user);
 }

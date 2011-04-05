@@ -20,7 +20,7 @@ Version    : 1.0
 Released   : 20102110
 
 -->
-<%@include file="Header.jsp" %>
+<jsp:include page="LoadHeader" />
 <jsp:useBean class="pagesbeans.SignUpBean" id="user" scope="request"/>
 <jsp:setProperty property="*" name="user"/>
 
@@ -57,26 +57,7 @@ Released   : 20102110
                 <div style="clear: both;">&nbsp;</div>
             </div>
             <!-- end #content -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                    </li>
-                    <li>
-                        <h2>Categories</h2>
-                        <ul>
-                            <jsp:include page="ExtractAllCategoriesInSide"/>
-
-                        </ul>
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-            </div>
-            <!-- end #sidebar -->
+           <jsp:include page="Category.jsp" />
             <div style="clear: both;">&nbsp;</div>
         </div>
     </div>

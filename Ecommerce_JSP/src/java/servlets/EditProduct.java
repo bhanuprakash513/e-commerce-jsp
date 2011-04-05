@@ -56,7 +56,9 @@ public class EditProduct extends HttpServlet {
             out.println("<tr><td><b>Quantity</b></td><td><input type='text' size='20' id='txt3' onblur='quantities();' name='quantity' value='"+product.getQuantity()+"'><span id='sp3'></span></td></tr>");
             out.println("<tr><td><b>Product Picture</b></td><td><input type='file' size='20' id='txt4' name='picturePath'><span id='sp4'></span></td></tr>");
             out.println("<tr><td><b>Picture Description</b></td><td><input type='Text' size='40' id='txt5' name'description' value='"+product.getDescription()+"'><span id='sp5'></span></td></tr>");
-
+            //out.println("<select id='sel1' name='category' value='"+product.getCategories().getName()+"'>");
+//<select id="sel1" name="category">
+                                                //<option value="choose the category">Choose The Category</option>
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");

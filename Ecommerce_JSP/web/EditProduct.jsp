@@ -27,7 +27,7 @@ Released   : 20102110
 
 -->
 <%@taglib prefix="c"uri="http://java.sun.com/jstl/core" %>
-<%@include file="Header.jsp" %>
+<jsp:include page="LoadHeader" />
 <script>
     var flagpname=false;
     var flagprice=false;
@@ -240,26 +240,7 @@ function Validate() {
                 <div style="clear: both;">&nbsp;</div>
             </div>
             <!-- end #content -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                    </li>
-                    <li>
-                        <h2>Categories</h2>
-                        <ul>
-                            <jsp:include page="ExtractAllCategoriesInSide"/>
-                            <br><br><br><br><br><br><br><br><br>
-                        </ul>
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-            </div>
-            <!-- end #sidebar -->
+            <jsp:include page="Category.jsp" />
             <div style="clear: both;">&nbsp;</div>
         </div>
     </div>

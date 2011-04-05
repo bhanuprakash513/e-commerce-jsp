@@ -6,6 +6,7 @@ package servlets;
  */
 
 
+import com.oreilly.servlet.MultipartWrapper;
 import databeans.Categories;
 import databeans.Products;
 import databeans.model.AdminService;
@@ -46,19 +47,29 @@ public class AddProductToDb extends HttpServlet {
     throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String picname = "";
         try {
             ppage=(ProductBean)request.getAttribute("product");
             pdata = new Products();
             pdata.setDescription(ppage.getDescription());
             pdata.setName(ppage.getProductName());
             pdata.setPrice(ppage.getPriceValue());
-            File file = new File( ppage.getPicturePath() );
-     	byte []data = new byte[ (int)(file.length()) ];
-         (new FileInputStream( file )).read( data );
-         FileOutputStream output=new FileOutputStream( "images/" + file.getName() );
-         output.write(data);
+            if(request instanceof MultipartWrapper){
+                out.println("hhhhhhhhhhhhhhhhhhhhhhhh");
+                MultipartWrapper request1=(MultipartWrapper) request;
+                File f=request1.getFile(request.getParameter("picturePath"));
+                String path=request.getSession().getServletContext().getRealPath("images");
+                picname=f.getName();
+                FileInputStream fis=new FileInputStream(f);
+                FileOutputStream fos=new FileOutputStream(path+"/"+picname);
+                int i=0;
+                while((i=fis.read())!=0){
+                    fos.write(i);
+                }
+            }
+            
          //out.write( data );
-            pdata.setPictureLink(file.getName());
+            pdata.setPictureLink(picname);
             pdata.setQuantity(ppage.getQuantity());
             c=admin.getCategory(ppage.getCategory());
             pdata.setCategories(c);

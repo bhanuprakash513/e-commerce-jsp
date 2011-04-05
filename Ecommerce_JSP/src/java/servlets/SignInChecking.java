@@ -84,9 +84,9 @@ public class SignInChecking extends HttpServlet {
             else{
                  //session.setAttribute("status", new String("guest"));
                 //send redirect in order to make the browser take the id if the the admin invoked it directly
-                RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-                out.println("barraaaaaaaa");
-                rd.include(request, response);
+                RequestDispatcher rd = request.getRequestDispatcher("InvalidUser.jsp");
+               // out.println("<h1>invalid user name or passwor</h1>");
+                rd.forward(request, response);
 //                 response.sendRedirect("ViewAllProducts.jsp");
             }
 

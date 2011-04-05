@@ -17,10 +17,10 @@
     </head>
     <body>
 
-
         <jsp:include page="LoadHeader" />
                    
                    
+
 
 
         <div id="page">
@@ -31,7 +31,7 @@
 
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="product.jsp" >
-                        <jsp:param name="catId" value="5"/>
+                        <jsp:param name="catId" value="1"/>
                    </jsp:include>
                    </div>
             </div>

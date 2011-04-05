@@ -20,22 +20,7 @@
 </head>
 <body>
 
-<div id="wrapper">
-	<div id="header">
-		<div id="logo">
-			<img src="images/imageExample.gif" width="120" height="80">
-		</div>
-		<div id="search">
-			<form method="get" action="">
-				<fieldset>
-				<b><a href="#"><font color="white">sign up</font></a></b>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<b><a href="#"><font color="white">sign in</font></a></b>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-    </div>
+<jsp:include page="LoadHeader" />
 <jsp:useBean class="pagesbeans.SignUpBean" id="user" scope="request"/>
 <jsp:setProperty property="*" name="user"/>
 <jsp:include page="EditProfileInDb"/>
@@ -71,25 +56,7 @@
                 <div style="clear: both;">&nbsp;</div>
             </div>
             <!-- end #content -->
-            <div id="sidebar">
-                <ul>
-                    <li>
-                    </li>
-                    <li>
-                        <h2>Categories</h2>
-                        <ul>
-                            <jsp:include page="ExtractAllCategoriesInSide"/>
-
-                        </ul>
-                    </li>
-                    <li>
-
-                    </li>
-                    <li>
-
-                    </li>
-                </ul>
-            </div>
+             <jsp:include page="Category.jsp" />
             <!-- end #sidebar -->
             <div style="clear: both;">&nbsp;</div>
         </div>

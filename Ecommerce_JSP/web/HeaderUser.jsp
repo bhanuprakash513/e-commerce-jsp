@@ -7,8 +7,10 @@
 			<form method="get" action="">
 				<fieldset>
                                     <b><a href ="EditProfile.jsp"><font size="4" color="white">EditProfile</font></a></b>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<b><a href="#"><font color="white">SignOut</font></a></b>
+				&nbsp;&nbsp;
+				<b><a href="cart.jsp"><font color="white">My Cart</font></a></b>
+                                &nbsp;&nbsp;
+				<b><a href="SignOut"><font color="white">SignOut</font></a></b>
 				</fieldset>
 			</form>
 		</div>
