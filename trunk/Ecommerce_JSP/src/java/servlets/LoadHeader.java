@@ -7,10 +7,12 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -30,6 +32,34 @@ public class LoadHeader extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
+
+            HttpSession se = request.getSession();
+
+                   if (se.getAttribute("status")!= null){
+                       if(se.getAttribute("status").toString().equals("user"))
+                       {
+                            RequestDispatcher rd = request.getRequestDispatcher("HeaderUser.jsp");
+                            rd.include(request, response);
+                       }
+                       else if (se.getAttribute("status").toString().equals("admin"))
+                       {
+                            RequestDispatcher rd = request.getRequestDispatcher("HeaderAdmin.jsp");
+                            rd.include(request, response);
+
+                       }
+                            else{
+                            RequestDispatcher rd = request.getRequestDispatcher("Header.jsp");
+                            rd.include(request, response);
+
+                       }
+                   }
+                   else
+                   {
+                      RequestDispatcher rd = request.getRequestDispatcher("Header.jsp");
+                            rd.include(request, response);
+
+                   }
+
             /* TODO output your page here
             out.println("<html>");
             out.println("<head>");
