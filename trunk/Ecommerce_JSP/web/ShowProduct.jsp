@@ -9,6 +9,27 @@
         <div id="page">
             <div id="page-bgtop">
                <div id="page-bgbtm">
+
+
+                   <%
+                   HttpSession se = request.getSession();
+                   if (se.getAttribute("status")!= null){
+                       if(se.getAttribute("status").toString().equals("user"))
+                            pageContext.include("HeaderUser.jsp");
+                       else if (se.getAttribute("status").toString().equals("admin"))
+                            pageContext.include("HeaderAdmin.jsp");
+                      else
+                            pageContext.include("Header.jsp");
+
+                   }
+                   else
+                   {
+                       pageContext.include("Header.jsp");
+                   }
+                   %>
+
+
+
                    <jsp:include page="Category.jsp" />
                    <jsp:include page="oneproduct.jsp" />
                    </div>
