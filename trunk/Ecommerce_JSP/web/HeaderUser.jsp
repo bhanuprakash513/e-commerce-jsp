@@ -6,9 +6,9 @@
 		<div id="search">
 			<form method="get" action="">
 				<fieldset>
-                                    <b><font size="8" color="white">Welcome</font></a></b>
+                                    <b><a href ="EditProfile.jsp"><font size="4" color="white">EditProfile</font></a></b>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<b><a href="#"><font color="white">sign in</font></a></b>
+				<b><a href="#"><font color="white">SignOut</font></a></b>
 				</fieldset>
 			</form>
 		</div>
