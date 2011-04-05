@@ -14,10 +14,23 @@
         <title>cart</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <jsp:include page="ShowCart"/>
-        <form action="SubmitCart">
-            <input type="submit" value="Buy">
-        </form>>
+          <jsp:include page="LoadHeader" />
+
+          <div id="page">
+            <div id="page-bgtop">
+               <div id="page-bgbtm">
+
+
+
+                   <jsp:include page="Category.jsp" />
+                   <jsp:include page="ShowCart"/>
+                        <form action="SubmitCart">
+                            <input type="submit" value="Buy">
+                        </form>>
+                   </div>
+            </div>
+        </div>
     </body>
 </html>
+
+        
